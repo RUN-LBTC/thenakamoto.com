@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>What are UTXO's? | The Nakamoto</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>What are UTXO’s? | The Nakamoto</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="What are UTXO’s?" />
+<meta name="author" content="tiaan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What are UTXO’s and how do they affect scaling?" />
+<meta property="og:description" content="What are UTXO’s and how do they affect scaling?" />
+<link rel="canonical" href="http://localhost:4000/What-are-UTXOs/" />
+<meta property="og:url" content="http://localhost:4000/What-are-UTXOs/" />
+<meta property="og:site_name" content="The Nakamoto" />
+<meta property="og:image" content="http://localhost:4000/assets/images/utxo.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-14T00:00:00+02:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/What-are-UTXOs/","headline":"What are UTXO’s?","dateModified":"2020-09-14T00:00:00+02:00","datePublished":"2020-09-14T00:00:00+02:00","image":"http://localhost:4000/assets/images/utxo.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/What-are-UTXOs/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"tiaan"},"author":{"@type":"Person","name":"tiaan"},"description":"What are UTXO’s and how do they affect scaling?","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="The Nakamoto">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://twitter.com/TheNakamotoCom"><i class="fab fa-twitter"></i></a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/The-Nakamoto"><i class="fab fa-github"></i> Contribute</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input style="text-align: left; padding-left: 30px;" type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search"/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">The Nakamoto</h1>
+    <p class="lead">
+        
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Looking for something interesting to read? Check out: What are UTXO's?&url=http://localhost:4000/What-are-UTXOs/ by @TheNakamotoCom" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/What-are-UTXOs/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/What-are-UTXOs/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/1d4073f730790f1b0da3577939c2e02f?s=250&d=mm&r=x" alt="Tiaan Wolmarans">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://www.imtiaan.com">Tiaan Wolmarans</a><a target="_blank" href="https://twitter.com/ImTiaan" class="btn follow">Follow</a>
+                        <span class="author-description">Founder of The Nakamoto, an educational portal for sound money and technology.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">What are UTXO's?</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/utxo.png" alt="What are UTXO's?">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div style="font-family: Roboto;" class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
+                <p>Scaling is one of the most talked-about things when it comes to blockchain, its the endless battle of trying to balance security, speed, and storage.</p>
+
+<p>This week, we’ll look at UTXO’s — something you might have heard of before, but didn’t <em>quite</em> grasp. Since this is a slightly more complicated topic, I’ll add reminders on what UTXO stands for (unspent transaction output).</p>
+
+<p>A UTXO (unspent transaction output) is the output of a transaction that a user receives and can spend in the future. As the name suggests, it is the <em>unspent</em> output of a transaction.</p>
+
+<p>Imagine a UTXO’s as paper money or coins. If you have thirty-seven dollars in your wallet or purse, you’ll have a combination of paper and coins in your possession that makes up the $37.</p>
+
+<p>The UTXO’s in your wallet or purse are the individual notes and coins that you hold. These are little chunks of money that you can use in any combination to make a purchase — just like “ <em>real</em> “ money!</p>
+
+<p>This is exactly the same in a Bitcoin wallet. When you open it, you see the $37 balance, and like your coins and papers, this balance could be made up of one or many UTXO’s (unspent transaction outputs).</p>
+
+<p>UTXO’s are even more similar to fiat money as we dig deeper. Sometimes you go to the store and want to buy a soda, and you may not have the exact change, maybe the soda costs $1.50, and you only have a $10 bill.</p>
+
+<p>The way you purchase the soda is to overpay the teller at the store, and then the teller gives you back the difference (pay $10 and get $8.50 in return). This is the same as spending money with Bitcoin.</p>
+
+<p>The network requires you to send at least one full UTXO to complete a transaction — You can’t pay for a $10 purchase by cutting a $20 bill in half, and the same can be said for a UTXO (unspent transaction output).</p>
+
+<p>If you want to buy something that costs 0.4 bitcoins, and your wallets’ balance consists of two UTXO’s (unspent transaction outputs).</p>
+
+<p>The first UTXO being 0.15BTC and the second being 0.3 BTC making your total balance 0.45 BTC.</p>
+
+<p>Since you don’t have a single UTXO or a combination that perfectly adds up to 0.4 BTC, you send both UTXO’s out to the network (overpay the teller), the merchant then receives a UTXO of 0.4 BTC, and you are sent back a new UTXO of 0.05 BTC.</p>
+
+<h4 id="but-utxos-arent-exactly-like-cash">But UTXO’s aren’t EXACTLY like cash</h4>
+
+<p>While in the most basic of terms a UTXO (unspent transaction output) can be compared to cash, there are a few differences:</p>
+
+<p>The most obvious initial difference is that with a cash transaction, you don’t pay any fees to a network, but with Bitcoin, you also have to factor in the fees paid to miners.</p>
+
+<p>The UTXO (unspent transaction output) that you receive if you use the same example as above, would be less than 0.05 BTC because of the network fees you need to pay for your transaction to be added to a block.</p>
+
+<p><b><em>New UTXO = (total of original UTXO[s]) — (amount sent to a different address) — (transaction fees)</em></b></p>
+
+<p>The next way in which UTXO’s are different is that they, unlike fiat coins and bills, can be of any value. Fiat coins and bills’ values are determined by each respective government around the world.</p>
+
+<p>This is beneficial for a few reasons, for example, you could have a UTXO whose value equals a $1,000,000 but if you wanted the same in cash, you may have to carry 10,000 x $100 bills.</p>
+
+<h4 id="the-first-hurdle">The first hurdle</h4>
+
+<p>Developers are usually pretty good at identifying ways in which to optimise these packages to deliver performant and efficient UTXO’s that keep the data weight of the blockchain manageable — a critical aspect to scaling. More efficient UTXO generation means minimal data weight and optimal speed processing speeds.</p>
+
+<p>Blockchains aren’t always better than cash — when you have cash, you don’t know its entire history, and don’t need to either. Inversely, your Bitcoin wallet needs to know the number and quantity of UTXO’s that are associated with your address(es).</p>
+
+<p>This means that most blockchains that use UTXO’s (unspent transaction outputs) have the requirement that a UTXO can only be assembled or disassembled into smaller or larger sizes is when you are making a transaction. So if you never send or receive funds, the UTXO’s in your wallet can’t be adjusted.</p>
+
+<p>This is not a major drawback for end-users, however, there are circumstances where it may be better to be able to adjust the UTXO size before making a transaction. The first reason that comes to mind is privacy. You might want to minimise the information stored about any addresses associated with you, so receiving a UTXO in “change” after sending money to someone will result in more information about the end-user.</p>
+
+<h4 id="one-of-the-biggest-issues-with-utxos-is-the-space-it-requires">One of the biggest issues with UTXO’s is the space it requires</h4>
+
+<p>The UTXO set is currently close to 4GB on disk, and can often can’t be entirely stored in memory as it’s bound by the block size limit.</p>
+
+<p>The UTXO (unspent transaction output) set can also grow as fast as the blockchain itself. In the case of Bitcoin, even after implementing SegWit, which reduces transaction sizes, there is still a close to 50% growth in the UTXO set.</p>
+
+<p>This implies that within the next few years we could see the UTXO set grow to close to 20GB, which may be impractical even if you consider Moore’s law, where computers may gain enough storage to run a full Bitcoin node with the most basic computers of the future but we also need to consider data usage, the push for more mobile blockchain solutions and countries where data or bandwidth are more difficult to come by or prohibitively expensive.</p>
+
+<p>This will pose an interesting challenge for Bitcoin and other blockchain developers, one which will certainly push developers to their limits both practically and creatively when working on this problem.</p>
+
+<p><em>This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.</em></p>
+
+            </div>
+
+            <!-- Rating -->
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2020-09-14">14 Sep 2020</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Bitcoin">Bitcoin</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Cryptocurrency">Cryptocurrency</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Scaling">Scaling</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#UTXO">UTXO</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/tags#Bitcoin">#Bitcoin</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/tags#Cryptocurrency">#Cryptocurrency</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/tags#Scaling">#Scaling</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/tags#UTXO">#UTXO</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//welcome/"> &laquo; Welcome to The Nakamoto</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'thenakamoto-com'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+</div>
+
+
+<!-- Bottom Alert Bar
+================================================== -->
+<div class="alertbar">
+	<div class="container text-center">
+		<span><img src="/assets/images/logo.png" alt="The Nakamoto"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="https://thenakamoto.us20.list-manage.com/subscribe/post?u=a62d8de4abe2b1bdef7e13c98&amp;id=af36692f4c" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+	</div>
+</div>
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== 
+<div class="jumbotron fortags">
+    <div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Tags <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Bitcoin">Bitcoin (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Cryptocurrency">Cryptocurrency (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Education">Education (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#UTXO">UTXO (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scaling">Scaling (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div> -->
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2020 The Nakamoto 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">The Nakamoto</a> by <a href="https://www.xxi.finance" target="0">XXI Finance</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//thenakamoto-com.disqus.com/count.js"></script>
+
+
+</body>
+</html>
