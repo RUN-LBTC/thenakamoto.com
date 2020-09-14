@@ -5,7 +5,7 @@ description: ""
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 url: the-nakamoto.github.io
-baseurl: ''
+baseurl: '/thenakamoto.com'
 google_analytics: ''
 disqus: 'thenakamoto-com'
 mailchimp-list: 'https://thenakamoto.us20.list-manage.com/subscribe/post?u=a62d8de4abe2b1bdef7e13c98&amp;id=af36692f4c'
