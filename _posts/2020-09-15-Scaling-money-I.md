@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Sacling Money I"
+title:  "Scaling Money I"
 author: tiaan
 categories: [Bitcoin, Cryptocurrency, Money, Fractional Reserve Banking, Scaling, Fiat]
 tags: [Bitcoin, Cryptocurrency, Money, Fractional Reserve Banking, Scaling, Fiat]
