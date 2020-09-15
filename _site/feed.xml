@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Sep 2020 11:06:15 +0200</pubDate>
-    <lastBuildDate>Tue, 15 Sep 2020 11:06:15 +0200</lastBuildDate>
+    <pubDate>Tue, 15 Sep 2020 11:23:10 +0200</pubDate>
+    <lastBuildDate>Tue, 15 Sep 2020 11:23:10 +0200</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -106,36 +106,63 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
     
       <item>
         <title>Sharding II</title>
-        <description>&lt;p&gt;&lt;em&gt;This series covers my first draft of the various chapters for my upcoming book. These articles have not been through fact checks or editing and will not be the final version.&lt;/em&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;em&gt;In our last update, we discussed what sharding is, the problems it aims to solve and some of the hurdles we need to overcome to effectively implement it. Today we’ll look at cross-shard transactions, invalid transactions, and malicious behavior.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;bartering--the-first-kind-of-money&quot;&gt;Bartering — The first kind of money&lt;/h4&gt;
+&lt;p&gt;The basic type of shard we described in our last article isn’t a very useful or practical method of sharding, because they can’t communicate with each other, which makes them as useful as one individual blockchain.&lt;/p&gt;
 
-&lt;p&gt;What is money, why does it exist and when did it come to be? To start answering these questions, we need to look back to when we lived in small groups, tribes or villages.&lt;/p&gt;
+&lt;p&gt;Let’s take the example of making a simple payment. If user A and user B were on the same shard, the validators within the shard would be able to process the transaction without issue, but what happens when they have accounts on different shards?&lt;/p&gt;
 
-&lt;p&gt;This is the first time we see the most basic form of money — Not the kind we see today, or even the types of money we read about in history books, like shells, beads or salt — the first kind of money is simply anything of value, that is exchangeable.&lt;/p&gt;
+&lt;p&gt;User A is on shard #1 and user B is on shard #2. The validators on the individual shards would not be able to debit or credit the users’ accounts because they would have no authority on each others’ respective shards.&lt;/p&gt;
 
-&lt;p&gt;Exchanging forms the foundation of human life, without exchanges, we would have essentially no society. From a young age we start inventing forms of money by placing value on our possessions, and offering them to the markets we have access to. Even before kindergarten, you will likely have experienced some form of exchange, whether it was trading marbles, action figures or collectible cards, within your school an economy around every kids possessions was formed. Some kids participated and some didn’t, but it was there.&lt;/p&gt;
+&lt;p&gt;There are however solutions to this problem, so let’s take a look at some of them in a little more detail:&lt;/p&gt;
 
-&lt;p&gt;This economy however, is limited, and is dependent on everyone owning something of value to participate. But how is value determined? The value assigned by the owner is not always the value assigned by the market, so when I want to trade my blue marbles for red ones, I might decide that one blue marble is worth two red ones. My classmate however, might view blue and red marbles equally, so he might counter my offer and if we then agree that they are of equal value, we set the price for an exchange of blue and red marbles. In another scenario, my classmate may have too many red marbles, and too few blue ones, making red marbles more valuable than blue ones to me, and blue marbles more valuable to him.&lt;/p&gt;
+&lt;h4 id=&quot;synchronous-same-time-cross-shard-transactions&quot;&gt;Synchronous (same-time) cross-shard transactions&lt;/h4&gt;
+&lt;p&gt;In this case, when user A on shard #1 needs to send funds to user B on shard #2, the blocks in each shard that contains state transition that’s related to the transaction itself are produced simultaneously, and the validators on each shard work collaboratively to confirm the transaction. Vitalik Buterin proposed merge blocks with this solution back in early 2018.&lt;/p&gt;
 
-&lt;p&gt;In both examples, the exchange between us is voluntary, and the only reason that the trade happens is because we both expect to benefit from it. We both benefit from it because we both perceive what we give up to be less valuable than what we get back. Since I have an excess of blue marbles, and my classmate an excess of red, we value the marbles we already have lower than the ones we need because our supply exceeds our requirements.&lt;/p&gt;
+&lt;h4 id=&quot;asynchronous-cross-shard-transactions&quot;&gt;Asynchronous cross-shard transactions&lt;/h4&gt;
+&lt;p&gt;This is a slightly easier operation to complete, and far simpler to coordinate so it is more popular than synchronous transactions.&lt;/p&gt;
 
-&lt;p&gt;A common misconception is that when an exchange takes place, it’s a record of the value of the items exchanged, but this simply isn’t the case. If I exchange a cup of coffee for a 1 carat diamond, it doesn’t mean that diamonds are worth less after that exchange, nor does it make coffee worth more. All that an exchange measures is the value of the items relative to those making the exchange. (This is something we’ll come back to when we discuss Bitcoin later)
-Exchanging goods and services was and is the absolute foundation of society, this is because every person, their circumstances and skills differ. An egg farmer values fish more than eggs since he can obtain eggs with ease, but not fish.&lt;/p&gt;
+&lt;p&gt;Again, we’ll use the example of user A on shard #1 wanting to send money to user B on shard #2.&lt;/p&gt;
 
-&lt;h4 id=&quot;the-limitations-of-barter&quot;&gt;The limitations of barter&lt;/h4&gt;
+&lt;p&gt;In this scenario, the shard in charge of crediting user B’s account will only validate its part of the transaction once it has enough proof that the shard in charge of debiting user A’s account has been done.
+This approach is not perfect though, there is a non-zero chance that one of the blocks of one of the shards gets orphaned. A non-zero chance, however unlikely is still a vulnerability that can’t be ignored.&lt;/p&gt;
 
-&lt;p&gt;Even though the exchange of goods is so fundamentally important to our survival as individuals and as a species, it would be impossible to scale because this type of direct exchange isn’t much more efficient than living off the grid and being able to self-sustain. Take our egg farmer for example; she wants to build a new coop, and in a world without money, she offers to pay with what she has — eggs.
-The first problem we face is that not everyone needs or wants eggs, so the people she hires to build her coop may not all accept eggs as payment. The second issue is that the items you exchange are not always easily divisible. While eggs are a reasonably small item and individual eggs are relatively inexpensive, so can be used to buy more expensive items, a shoemaker could hardly separate a pair of shoes to pay for something because a $100 pair of shoes is worth very little to nothing if you only have one of them.
-This also doesn’t mean that items that can be easily divisible are easier to transact with, because you then run into the first problem, where you may not be able to exchange what you have for what you need. This creates a scenario where you may have to jump through various sets of goods to buy the item that you actually want. Say our egg farmer wants shoes, but our shoemaker doesn’t want eggs, he wants cheese, and our cheesemaker wants milk, and our dairy farmer wants eggs. The Egg farmer has to sell their eggs for milk, then sell the milk for cheese, and the cheese for shoes, and then she finally gets the shoes she needed. Other than the huge effort that she has to go through to get the shoes, it also costs more to make multiple exchanges due to indivisibility, transport costs, and might even lose a little bit of value each time she makes an exchange on her journey to new shoes.&lt;/p&gt;
+&lt;p&gt;Taking the figure below into consideration we’ll look at why:&lt;/p&gt;
 
-&lt;h4 id=&quot;primitive-money&quot;&gt;Primitive Money&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingII-1.jpg?raw=true&quot; alt=&quot;Asynchronous Cross-Shard Transactions&quot; title=&quot;Asynchronous Cross-Shard Transactions&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Being the efficiency loving beings that we are, humans figured out how to scale economies by indirect exchange. Indirect exchange is the process of the egg farmer buying and selling into one or more other products in order to buy what she actually needs, based on the needs of the seller of the item she wants to buy.
-This is still an inefficient means of exchange, but indirect exchange lead us to discover (or invent — whichever you prefer) the mechanism of a medium of exchange.&lt;/p&gt;
+&lt;p&gt;This blockchain has two shards, and by pure coincidence, they both fork at the exact point that the transaction is incorporated into block A in shard #1 and block X’ in shard #2.&lt;/p&gt;
 
-&lt;p&gt;Let’s consider again our egg farmer. This time she needs to buy some tools for her farm. The Blacksmith doesn’t need eggs, but he does need salt, so our farmer buys salt and sells the salt for the tools she needs. On the other side of the village, the baker sells his bread for salt because he needs it for making bread, and also uses the salt to buy flour from the mill.
-In this scenario salt becomes incredibly marketable because everyone is confident that they will be able to sell salt to get the goods that they need. This in turn makes salt more valuable because it starts being used as a medium of exchange.&lt;/p&gt;
+&lt;p&gt;When a fork like this happens, the shard has to orphan one of the chains and accept the other. In this case, if chain A, B, etc. becomes the accepted chain in shard #1 and chain W’, X’, etc. becomes the accepted chain in shard #2, then the transaction gets finalized and everyone is happy.&lt;/p&gt;
+
+&lt;p&gt;If the A’, B’ etc. chan in shard #1 is accepted and chain W, X etc. in shard #2 is accepted, then the entire transaction fails, which is also an acceptable outcome, because the transaction can be resent.&lt;/p&gt;
+
+&lt;p&gt;What happens if chain A, B, etc. is accepted in shard #1 and chain W, X, etc. is accepted in shard #2? One part of the transaction is finalized (A, B, etc.) and the other part of the transaction is abandoned (W, X, etc.)&lt;/p&gt;
+
+&lt;h4 id=&quot;is-that-it&quot;&gt;Is that it?&lt;/h4&gt;
+&lt;p&gt;Now that you have a better understanding of sharding and how it works, you might be satisfied, or have more questions, there is however at least one more thing to consider: bad actors.&lt;/p&gt;
+
+&lt;h4 id=&quot;malicious-nodes&quot;&gt;Malicious nodes&lt;/h4&gt;
+&lt;p&gt;It’s quite common (in any scenario) that when there is the potential for a large payday, there will be people out there thinking of ways to beat the system, whatever that system might be.&lt;/p&gt;
+
+&lt;h4 id=&quot;approving-invalid-blocks&quot;&gt;Approving invalid blocks&lt;/h4&gt;
+&lt;p&gt;Bad actor nodes might decide that they want to attack the network by creating blocks that attempt to alter the network. Using user #1 and #2, let’s hypothesize that User #1 has 10 coins and user #2 has 0 tokens. Malicious nodes on the network could attempt to create a block when user #1 sends those 10 coins to user #2, which ends up with user #1 having 0 coins and user #2 has 1000 coins.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingII-2.jpeg?raw=true&quot; alt=&quot;Approving invalid blocks&quot; title=&quot;Approving invalid blocks&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In a regular blockchain that isn’t sharded, this type of attack is impossible, since every node validates every block, and if an invalid block is discovered, all the nodes (whether they are miners or not) reject that block.&lt;/p&gt;
+
+&lt;p&gt;With classic blockchains, it doesn’t matter how many blocks malicious nodes create, or how fast they create them, the honest actors of the network will always ignore those blocks and continue building the honest chain.&lt;/p&gt;
+
+&lt;p&gt;Consider a chain that splits into two because bad nodes want to build invalid blocks to fill their accounts with a bunch of coins. The malicious nodes might even outnumber the honest nodes as is this case. The shorter chain is the honest chain, and the longer one is invalid. In a regular non-sharded blockchain, every participant is responsible for validating all the blocks they receive and confirming the state, therefore anyone who has a vested interest in the blockchain (and by extension its integrity) would immediately recognize the invalid chain and disregard it for the (in this case) shorter chain.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingII-3.jpg?raw=true&quot; alt=&quot;Approving invalid blocks&quot; title=&quot;Approving invalid blocks&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A sharded chain is a little more complex because participants can’t validate every transaction on each shard, so we have to figure out how to confirm that there are no invalid blocks within the entire history of the shard.&lt;/p&gt;
+
+&lt;p&gt;Since the beacon chain (discussed in our last post) doesn’t normally have the capacity to validate every block in every shard, we need another solution to ensure the integrity of each chain.&lt;/p&gt;
+
+&lt;p&gt;Assuming that the network, and by association, each shard has a Byzantine Fault Tolerance mechanism, and the malicious nodes within a shard control less than 66.667% you could build a mechanism that alerts the system if there are any attempts to generate invalid blocks, wherein one or more honest nodes could attest to valid or invalid blocks. If more than 66.667% of the shard is controlled by malicious nodes, then they could theoretically finalize blocks, however as long as one node within the shard is honest, a mechanism can be built to allow honest nodes to contest malicious ones.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.&lt;/em&gt;&lt;/p&gt;
 </description>
@@ -171,7 +198,7 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
       </item>
     
       <item>
-        <title>Sacling Money I</title>
+        <title>Sharding I</title>
         <description>&lt;p&gt;In this two-part explainer, we look at the Ethereum blockchain, sharding, and how sharding will allow blockchains to scale.&lt;/p&gt;
 
 &lt;p&gt;Ethereum is the blockchain most synonymous with the concept of sharding, and to understand why the Ethereum developer community wants to implement sharding, it’s important to understand what it is, and why it’s an attractive solution.&lt;/p&gt;
@@ -180,19 +207,21 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
 
 &lt;p&gt;Low throughput in conjunction with high latency and prices limit the network, and as a result, the network is less suitable for services and applications that need to scale as they are adopted. The primary reason for Ethereum’s low throughput is due to the requirement for every node on the network to process every transaction.&lt;/p&gt;
 
-&lt;h4 id=&quot;what-is-sharding&quot;&gt;What is Sharding?&lt;/h4&gt;
+&lt;h4 id=&quot;what-is-sharding&quot;&gt;What is sharding?&lt;/h4&gt;
 &lt;p&gt;Simply put, sharding is a way of partitioning to spread out computational and storage workloads across a P2P network so that each node isn’t responsible for processing the entire network’s transactional load but rather only maintains information related to its partition (or shard).&lt;/p&gt;
 
 &lt;p&gt;To further explain sharding we can use the very simplest example of sharding. Vitalik Buterin, the founder of Ethereum refers to this as “scaling by 1000 altcoins”&lt;/p&gt;
 
 &lt;p&gt;In this instance, instead of running a single blockchain, we run multiple blockchains and instead of referring to each as a blockchain, we call each chain a shard. Each shard, in turn, has its own network of validators or nodes which either mine blocks using a PoW algorithm, or by staking or voting.&lt;/p&gt;
 
-&lt;h4 id=&quot;the-challenges-to-sharding&quot;&gt;The Challenges to Sharding&lt;/h4&gt;
+&lt;h4 id=&quot;the-challenges-to-sharding&quot;&gt;The challenges to sharding&lt;/h4&gt;
 &lt;p&gt;The first issue we find when attempting to use sharding is that because each shard has its own set of nodes, each shard is less secure than having a single chain like Ethereum. So if Ethereum with the 𝑥 amount of nodes decided to hard fork and split into a sharded chain, and distributed the network over 10 shards, each shard would have 1% of the original chains’ security. This means that each shard could be compromised or corrupted by controlling 5.1% of the nodes of the original chain as opposed to 51% of it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&quot; alt=&quot;alt text&quot; title=&quot;Logo Title Text 1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingI-1.jpeg?raw=true&quot; alt=&quot;51% Majority&quot; title=&quot;51% Majority&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The second problem we run into is: “how do we / who chooses which node validates which shard?” For a bad actor, controlling 5.1% of the network’s nodes is only a problem if they are all validating in the same shard. Allowing nodes to choose which shard they validate within could cause frequent network attacks, so the best way to minimize the risk of attack is to not allow nodes to choose which shard they validate for.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingI-2.jpeg?raw=true&quot; alt=&quot;51% Majority&quot; title=&quot;51% Majority&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Virtually all sharding architecture relies on randomness to assign nodes to a shard. Assigning nodes to a shard requires calculations that aren’t shard specific and almost all of these designs make use of a separate chain that handles the maintenance of the entire network of shards and nodes.&lt;/p&gt;
 
@@ -202,7 +231,7 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
 
 &lt;p&gt;A sharded network does, however, have multiplicative properties, so if there are improvements to the efficiency of the network that result in the nodes in the network processing transactions four times faster, the beacon chain would be able to handle four times the amount of shards, improving the network speed by 16.&lt;/p&gt;
 
-&lt;h4 id=&quot;how-can-data-be-split-into-shards&quot;&gt;How can Data be Split into Shards?&lt;/h4&gt;
+&lt;h4 id=&quot;how-can-data-be-split-into-shards&quot;&gt;How can data be split into shards?&lt;/h4&gt;
 &lt;p&gt;Let’s start by looking at what functions nodes typically perform on a blockchain:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -231,30 +260,18 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
         <link>http://localhost:4000/Sharding-I/</link>
         <guid isPermaLink="true">http://localhost:4000/Sharding-I/</guid>
         
-        <category>Bitcoin</category>
+        <category>Ethereum</category>
         
         <category>Cryptocurrency</category>
         
-        <category>Money</category>
-        
-        <category>Fractional Reserve Banking</category>
-        
         <category>Scaling</category>
         
-        <category>Fiat</category>
         
-        
-        <category>Bitcoin</category>
+        <category>Ethereum</category>
         
         <category>Cryptocurrency</category>
         
-        <category>Money</category>
-        
-        <category>Fractional Reserve Banking</category>
-        
         <category>Scaling</category>
-        
-        <category>Fiat</category>
         
       </item>
     

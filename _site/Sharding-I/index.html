@@ -6,12 +6,12 @@
 
 <link rel="icon" href="/assets/images/logo.png">
 
-<title>Sacling Money I | The Nakamoto</title>
+<title>Sharding I | The Nakamoto</title>
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Sacling Money I | The Nakamoto</title>
+<title>Sharding I | The Nakamoto</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Sacling Money I" />
+<meta property="og:title" content="Sharding I" />
 <meta name="author" content="tiaan" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="We look at the Ethereum blockchain, sharding, and how sharding will allow blockchains to scale." />
@@ -19,11 +19,11 @@
 <link rel="canonical" href="http://localhost:4000/Sharding-I/" />
 <meta property="og:url" content="http://localhost:4000/Sharding-I/" />
 <meta property="og:site_name" content="The Nakamoto" />
-<meta property="og:image" content="http://localhost:4000/assets/images/ScalingMoneyI.png" />
+<meta property="og:image" content="http://localhost:4000/assets/images/ShardingI.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-15T00:00:00+02:00" />
 <script type="application/ld+json">
-{"image":"http://localhost:4000/assets/images/ScalingMoneyI.png","url":"http://localhost:4000/Sharding-I/","headline":"Sacling Money I","dateModified":"2020-05-15T00:00:00+02:00","datePublished":"2020-05-15T00:00:00+02:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"tiaan"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Sharding-I/"},"author":{"@type":"Person","name":"tiaan"},"description":"We look at the Ethereum blockchain, sharding, and how sharding will allow blockchains to scale.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://localhost:4000/assets/images/ShardingI.png","url":"http://localhost:4000/Sharding-I/","headline":"Sharding I","dateModified":"2020-05-15T00:00:00+02:00","datePublished":"2020-05-15T00:00:00+02:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"tiaan"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Sharding-I/"},"author":{"@type":"Person","name":"tiaan"},"description":"We look at the Ethereum blockchain, sharding, and how sharding will allow blockchains to scale.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -151,7 +151,7 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://twitter.com/intent/tweet?text=Looking for something interesting to read? Check out: Sacling Money I&url=http://localhost:4000/Sharding-I/ by @TheNakamotoCom" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Looking for something interesting to read? Check out: Sharding I&url=http://localhost:4000/Sharding-I/ by @TheNakamotoCom" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fab fa-twitter"></i>
             </a>
         </li>
@@ -204,7 +204,7 @@
                 
 
                 <!-- Post Title -->
-                <h1 class="posttitle">Sacling Money I</h1>
+                <h1 class="posttitle">Sharding I</h1>
 
             </div>
 
@@ -216,7 +216,7 @@
             
 
             
-            <img class="featured-image img-fluid" src="/assets/images/ScalingMoneyI.png" alt="Sacling Money I">
+            <img class="featured-image img-fluid" src="/assets/images/ShardingI.png" alt="Sharding I">
             
 
             
@@ -235,19 +235,21 @@
 
 <p>Low throughput in conjunction with high latency and prices limit the network, and as a result, the network is less suitable for services and applications that need to scale as they are adopted. The primary reason for Ethereum’s low throughput is due to the requirement for every node on the network to process every transaction.</p>
 
-<h4 id="what-is-sharding">What is Sharding?</h4>
+<h4 id="what-is-sharding">What is sharding?</h4>
 <p>Simply put, sharding is a way of partitioning to spread out computational and storage workloads across a P2P network so that each node isn’t responsible for processing the entire network’s transactional load but rather only maintains information related to its partition (or shard).</p>
 
 <p>To further explain sharding we can use the very simplest example of sharding. Vitalik Buterin, the founder of Ethereum refers to this as “scaling by 1000 altcoins”</p>
 
 <p>In this instance, instead of running a single blockchain, we run multiple blockchains and instead of referring to each as a blockchain, we call each chain a shard. Each shard, in turn, has its own network of validators or nodes which either mine blocks using a PoW algorithm, or by staking or voting.</p>
 
-<h4 id="the-challenges-to-sharding">The Challenges to Sharding</h4>
+<h4 id="the-challenges-to-sharding">The challenges to sharding</h4>
 <p>The first issue we find when attempting to use sharding is that because each shard has its own set of nodes, each shard is less secure than having a single chain like Ethereum. So if Ethereum with the 𝑥 amount of nodes decided to hard fork and split into a sharded chain, and distributed the network over 10 shards, each shard would have 1% of the original chains’ security. This means that each shard could be compromised or corrupted by controlling 5.1% of the nodes of the original chain as opposed to 51% of it.</p>
 
-<p><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1" /></p>
+<p><img src="https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingI-1.jpeg?raw=true" alt="51% Majority" title="51% Majority" /></p>
 
 <p>The second problem we run into is: “how do we / who chooses which node validates which shard?” For a bad actor, controlling 5.1% of the network’s nodes is only a problem if they are all validating in the same shard. Allowing nodes to choose which shard they validate within could cause frequent network attacks, so the best way to minimize the risk of attack is to not allow nodes to choose which shard they validate for.</p>
+
+<p><img src="https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingI-2.jpeg?raw=true" alt="51% Majority" title="51% Majority" /></p>
 
 <p>Virtually all sharding architecture relies on randomness to assign nodes to a shard. Assigning nodes to a shard requires calculations that aren’t shard specific and almost all of these designs make use of a separate chain that handles the maintenance of the entire network of shards and nodes.</p>
 
@@ -257,7 +259,7 @@
 
 <p>A sharded network does, however, have multiplicative properties, so if there are improvements to the efficiency of the network that result in the nodes in the network processing transactions four times faster, the beacon chain would be able to handle four times the amount of shards, improving the network speed by 16.</p>
 
-<h4 id="how-can-data-be-split-into-shards">How can Data be Split into Shards?</h4>
+<h4 id="how-can-data-be-split-into-shards">How can data be split into shards?</h4>
 <p>Let’s start by looking at what functions nodes typically perform on a blockchain:</p>
 
 <ol>
@@ -301,23 +303,11 @@
                     
                     
                     <li>
-                        <a class="smoothscroll" href="/categories#Bitcoin">Bitcoin</a>
-                    </li>
-                    
-                    <li>
                         <a class="smoothscroll" href="/categories#Cryptocurrency">Cryptocurrency</a>
                     </li>
                     
                     <li>
-                        <a class="smoothscroll" href="/categories#Fiat">Fiat</a>
-                    </li>
-                    
-                    <li>
-                        <a class="smoothscroll" href="/categories#Fractional-Reserve-Banking">Fractional Reserve Banking</a>
-                    </li>
-                    
-                    <li>
-                        <a class="smoothscroll" href="/categories#Money">Money</a>
+                        <a class="smoothscroll" href="/categories#Ethereum">Ethereum</a>
                     </li>
                     
                     <li>
@@ -334,23 +324,11 @@
                     
                     
                     <li>
-                        <a class="smoothscroll" href="/tags#Bitcoin">#Bitcoin</a>
-                    </li>
-                    
-                    <li>
                         <a class="smoothscroll" href="/tags#Cryptocurrency">#Cryptocurrency</a>
                     </li>
                     
                     <li>
-                        <a class="smoothscroll" href="/tags#Fiat">#Fiat</a>
-                    </li>
-                    
-                    <li>
-                        <a class="smoothscroll" href="/tags#Fractional-Reserve-Banking">#Fractional Reserve Banking</a>
-                    </li>
-                    
-                    <li>
-                        <a class="smoothscroll" href="/tags#Money">#Money</a>
+                        <a class="smoothscroll" href="/tags#Ethereum">#Ethereum</a>
                     </li>
                     
                     <li>
@@ -446,7 +424,7 @@ https://search.google.com/structured-data/testing-tool/u/0/
             
             
                 
-                    <a class="mt-1 mb-1" href="/categories#Bitcoin">Bitcoin (5)</a>
+                    <a class="mt-1 mb-1" href="/categories#Bitcoin">Bitcoin (4)</a>
                 
                     <a class="mt-1 mb-1" href="/categories#Cryptocurrency">Cryptocurrency (5)</a>
                 
@@ -454,11 +432,13 @@ https://search.google.com/structured-data/testing-tool/u/0/
                 
                     <a class="mt-1 mb-1" href="/categories#Scaling">Scaling (4)</a>
                 
-                    <a class="mt-1 mb-1" href="/categories#Money">Money (3)</a>
+                    <a class="mt-1 mb-1" href="/categories#Ethereum">Ethereum (1)</a>
                 
-                    <a class="mt-1 mb-1" href="/categories#Fractional-Reserve-Banking">Fractional Reserve Banking (3)</a>
+                    <a class="mt-1 mb-1" href="/categories#Money">Money (2)</a>
                 
-                    <a class="mt-1 mb-1" href="/categories#Fiat">Fiat (3)</a>
+                    <a class="mt-1 mb-1" href="/categories#Fractional-Reserve-Banking">Fractional Reserve Banking (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Fiat">Fiat (2)</a>
                 
                     <a class="mt-1 mb-1" href="/categories#Education">Education (1)</a>
                 

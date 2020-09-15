@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Sacling Money I"
+title:  "Sharding I"
 author: tiaan
-categories: [Bitcoin, Cryptocurrency, Money, Fractional Reserve Banking, Scaling, Fiat]
-tags: [Bitcoin, Cryptocurrency, Money, Fractional Reserve Banking, Scaling, Fiat]
-image: assets/images/ScalingMoneyI.png
+categories: [Ethereum, Cryptocurrency, Scaling]
+tags: [Ethereum, Cryptocurrency, Scaling]
+image: assets/images/ShardingI.png
 description: "We look at the Ethereum blockchain, sharding, and how sharding will allow blockchains to scale."
 featured: false
 hidden: false
@@ -19,19 +19,21 @@ According to ETH Gas Station, it takes around 1.78 minutes for a transaction to 
 
 Low throughput in conjunction with high latency and prices limit the network, and as a result, the network is less suitable for services and applications that need to scale as they are adopted. The primary reason for Ethereum’s low throughput is due to the requirement for every node on the network to process every transaction.
 
-#### What is Sharding?
+#### What is sharding?
 Simply put, sharding is a way of partitioning to spread out computational and storage workloads across a P2P network so that each node isn’t responsible for processing the entire network’s transactional load but rather only maintains information related to its partition (or shard).
 
 To further explain sharding we can use the very simplest example of sharding. Vitalik Buterin, the founder of Ethereum refers to this as “scaling by 1000 altcoins”
 
 In this instance, instead of running a single blockchain, we run multiple blockchains and instead of referring to each as a blockchain, we call each chain a shard. Each shard, in turn, has its own network of validators or nodes which either mine blocks using a PoW algorithm, or by staking or voting.
 
-#### The Challenges to Sharding
+#### The challenges to sharding
 The first issue we find when attempting to use sharding is that because each shard has its own set of nodes, each shard is less secure than having a single chain like Ethereum. So if Ethereum with the 𝑥 amount of nodes decided to hard fork and split into a sharded chain, and distributed the network over 10 shards, each shard would have 1% of the original chains’ security. This means that each shard could be compromised or corrupted by controlling 5.1% of the nodes of the original chain as opposed to 51% of it.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![51% Majority](https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingI-1.jpeg?raw=true "51% Majority")
 
 The second problem we run into is: “how do we / who chooses which node validates which shard?” For a bad actor, controlling 5.1% of the network’s nodes is only a problem if they are all validating in the same shard. Allowing nodes to choose which shard they validate within could cause frequent network attacks, so the best way to minimize the risk of attack is to not allow nodes to choose which shard they validate for.
+
+![51% Majority](https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/ShardingI-2.jpeg?raw=true "51% Majority")
 
 Virtually all sharding architecture relies on randomness to assign nodes to a shard. Assigning nodes to a shard requires calculations that aren’t shard specific and almost all of these designs make use of a separate chain that handles the maintenance of the entire network of shards and nodes.
 
@@ -41,7 +43,7 @@ Beacon chains have a few of their shortcomings. They are responsible for the rec
 
 A sharded network does, however, have multiplicative properties, so if there are improvements to the efficiency of the network that result in the nodes in the network processing transactions four times faster, the beacon chain would be able to handle four times the amount of shards, improving the network speed by 16.
 
-#### How can Data be Split into Shards?
+#### How can data be split into shards?
 Let’s start by looking at what functions nodes typically perform on a blockchain:
 
 1. They process/validate transactions
