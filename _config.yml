@@ -15,6 +15,7 @@ permalink: /:title/
 twitter:
   username: TheNakamotoCom
   card: summary
+  author: ImTiaan
 
 # Authors
 authors:
