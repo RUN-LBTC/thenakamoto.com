@@ -5,8 +5,8 @@
     <description>An educational portal for sound money and technology.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Sep 2020 16:25:33 +0200</pubDate>
-    <lastBuildDate>Wed, 16 Sep 2020 16:25:33 +0200</lastBuildDate>
+    <pubDate>Wed, 16 Sep 2020 16:36:06 +0200</pubDate>
+    <lastBuildDate>Wed, 16 Sep 2020 16:36:06 +0200</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -332,16 +332,10 @@ This approach is not perfect though, there is a non-zero chance that one of the 
       </item>
     
       <item>
-        <title>What are UTXO's?</title>
-        <description>&lt;h1 id=&quot;scaling-bitcoin-how-the-lightning-network-improves-bitcoin&quot;&gt;Scaling Bitcoin: How the Lightning Network Improves Bitcoin&lt;/h1&gt;
+        <title>How the Lightning Network scales Bitcoin</title>
+        <description>&lt;p&gt;When Satoshi Nakamoto first published the idea of Bitcoin, the very first comment was about scalability and how the Bitcoin proposal does not allow for scaling. Now, 10 years later, scalability is still a problem for Bitcoin.&lt;/p&gt;
 
-&lt;p&gt;![][1]&lt;/p&gt;
-
-&lt;p&gt;![Author profile picture][2]&lt;/p&gt;
-
-&lt;p&gt;When Satoshi Nakamoto first published the idea of Bitcoin, the very first comment was about scalability and how the Bitcoin proposal does not allow for scaling. Now, 10 years later, scalability is still a problem for Bitcoin.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-scalability&quot;&gt;What is scalability?&lt;/h2&gt;
+&lt;h4 id=&quot;what-is-scalability&quot;&gt;What is scalability?&lt;/h4&gt;
 
 &lt;p&gt;Scaling is the ability of a product or network to be able to grow with demand, so if we use a simple example, a delivery company could increase the number of deliveries it makes in a day by adding drivers and vehicles, but if there’s only one sorting warehouse, the whole company (in Bitcoins case — Network) is limited to how many packages can be sorted in the warehouse daily.&lt;/p&gt;
 
@@ -355,7 +349,7 @@ This approach is not perfect though, there is a non-zero chance that one of the 
 
 &lt;p&gt;The fact that we are able to communicate with each other and with systems instantly is an interesting concept when we apply it to money. While settling large amounts of money internationally can take a long time, sending funds via Venmo or the Cash App is instant, and more importantly, instantly spendable.&lt;/p&gt;
 
-&lt;h2 id=&quot;is-bitcoin-useful&quot;&gt;Is Bitcoin useful?&lt;/h2&gt;
+&lt;h4 id=&quot;is-bitcoin-useful&quot;&gt;Is Bitcoin useful?&lt;/h4&gt;
 
 &lt;p&gt;Just like a bank wire transfer takes some time to settle a payment, so does Bitcoin. While a bank could take a few days to settle a payment, Bitcoin can take anything from 10 minutes to a day. The difference in settlement time is dependent on two things; How busy the network is, and how much you were willing to pay to settle the payment (known as a miners fee).&lt;/p&gt;
 
@@ -365,7 +359,7 @@ This approach is not perfect though, there is a non-zero chance that one of the 
 
 &lt;p&gt;With Bitcoin, you could do this in an hour, without anyone being able to delay, postpone or stop the transaction. Besides the fact that this is a massive win for individual liberty and freedom to transact, it also massively reduces the time required to make this transfer to someone. Bitcoin does what banks do in 5 days in ten minutes, but that still doesn’t make the currency useful on a massive scale.&lt;/p&gt;
 
-&lt;h2 id=&quot;bitcoin--evolved&quot;&gt;Bitcoin — evolved&lt;/h2&gt;
+&lt;h4 id=&quot;bitcoin--evolved&quot;&gt;Bitcoin — evolved&lt;/h4&gt;
 
 &lt;p&gt;Think about how you transact with money for a moment. You don’t make bank transfers to pay for everything you buy. Sometimes you use your credit card. The credit card was invented in the 50’s — and yet its still the best solution we have for making payments?&lt;/p&gt;
 
@@ -401,6 +395,8 @@ This approach is not perfect though, there is a non-zero chance that one of the 
         
         <category>Scaling</category>
         
+        <category>Lightning Network</category>
+        
         
         <category>Bitcoin</category>
         
@@ -409,6 +405,8 @@ This approach is not perfect though, there is a non-zero chance that one of the 
         <category>UTXO</category>
         
         <category>Scaling</category>
+        
+        <category>Lightning Network</category>
         
       </item>
     

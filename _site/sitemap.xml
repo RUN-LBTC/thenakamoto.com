@@ -58,6 +58,9 @@
 <loc>http://localhost:4000/category/scaling/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/category/lightning-network/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/category/ethereum/</loc>
 </url>
 </urlset>

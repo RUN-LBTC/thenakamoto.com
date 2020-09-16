@@ -1,25 +1,19 @@
 ---
 layout: post
-title:  "What are UTXO's?"
+title:  "How the Lightning Network scales Bitcoin"
 author: tiaan
-categories: [Bitcoin, Cryptocurrency, UTXO, Scaling]
-tags: [Bitcoin, Cryptocurrency, UTXO, Scaling]
-image: assets/images/utxo.png
+categories: [Bitcoin, Cryptocurrency, UTXO, Scaling, Lightning Network]
+tags: [Bitcoin, Cryptocurrency, UTXO, Scaling, Lightning Network]
+image: assets/images/LightningI.png
 description: "What are UTXO's and how do they affect scaling?"
 featured: false
 hidden: false
 rating: 
 ---
 
-# Scaling Bitcoin: How the Lightning Network Improves Bitcoin
-
-![][1]
-
-![Author profile picture][2]
-
 When Satoshi Nakamoto first published the idea of Bitcoin, the very first comment was about scalability and how the Bitcoin proposal does not allow for scaling. Now, 10 years later, scalability is still a problem for Bitcoin.
 
-## What is scalability?
+#### What is scalability?
 
 Scaling is the ability of a product or network to be able to grow with demand, so if we use a simple example, a delivery company could increase the number of deliveries it makes in a day by adding drivers and vehicles, but if there's only one sorting warehouse, the whole company (in Bitcoins case — Network) is limited to how many packages can be sorted in the warehouse daily.
 
@@ -33,7 +27,7 @@ Nowadays, we no longer require all of these touchpoints to deliver a message, we
 
 The fact that we are able to communicate with each other and with systems instantly is an interesting concept when we apply it to money. While settling large amounts of money internationally can take a long time, sending funds via Venmo or the Cash App is instant, and more importantly, instantly spendable.
 
-## Is Bitcoin useful?
+#### Is Bitcoin useful?
 
 Just like a bank wire transfer takes some time to settle a payment, so does Bitcoin. While a bank could take a few days to settle a payment, Bitcoin can take anything from 10 minutes to a day. The difference in settlement time is dependent on two things; How busy the network is, and how much you were willing to pay to settle the payment (known as a miners fee).
 
@@ -43,7 +37,7 @@ Ok, so Bitcoin sucks at making small payments, it's far more efficient than the 
 
 With Bitcoin, you could do this in an hour, without anyone being able to delay, postpone or stop the transaction. Besides the fact that this is a massive win for individual liberty and freedom to transact, it also massively reduces the time required to make this transfer to someone. Bitcoin does what banks do in 5 days in ten minutes, but that still doesn't make the currency useful on a massive scale.
 
-## Bitcoin — evolved
+#### Bitcoin — evolved
 
 Think about how you transact with money for a moment. You don't make bank transfers to pay for everything you buy. Sometimes you use your credit card. The credit card was invented in the 50's — and yet its still the best solution we have for making payments?
 
