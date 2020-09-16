@@ -5,8 +5,8 @@
     <description>An educational portal for sound money and technology.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Sep 2020 14:15:58 +0200</pubDate>
-    <lastBuildDate>Wed, 16 Sep 2020 14:15:58 +0200</lastBuildDate>
+    <pubDate>Wed, 16 Sep 2020 16:25:33 +0200</pubDate>
+    <lastBuildDate>Wed, 16 Sep 2020 16:25:33 +0200</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -311,6 +311,87 @@ This approach is not perfect though, there is a non-zero chance that one of the 
         <pubDate>Fri, 14 Feb 2020 00:00:00 +0200</pubDate>
         <link>http://localhost:4000/What-are-UTXOs/</link>
         <guid isPermaLink="true">http://localhost:4000/What-are-UTXOs/</guid>
+        
+        <category>Bitcoin</category>
+        
+        <category>Cryptocurrency</category>
+        
+        <category>UTXO</category>
+        
+        <category>Scaling</category>
+        
+        
+        <category>Bitcoin</category>
+        
+        <category>Cryptocurrency</category>
+        
+        <category>UTXO</category>
+        
+        <category>Scaling</category>
+        
+      </item>
+    
+      <item>
+        <title>What are UTXO's?</title>
+        <description>&lt;h1 id=&quot;scaling-bitcoin-how-the-lightning-network-improves-bitcoin&quot;&gt;Scaling Bitcoin: How the Lightning Network Improves Bitcoin&lt;/h1&gt;
+
+&lt;p&gt;![][1]&lt;/p&gt;
+
+&lt;p&gt;![Author profile picture][2]&lt;/p&gt;
+
+&lt;p&gt;When Satoshi Nakamoto first published the idea of Bitcoin, the very first comment was about scalability and how the Bitcoin proposal does not allow for scaling. Now, 10 years later, scalability is still a problem for Bitcoin.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-scalability&quot;&gt;What is scalability?&lt;/h2&gt;
+
+&lt;p&gt;Scaling is the ability of a product or network to be able to grow with demand, so if we use a simple example, a delivery company could increase the number of deliveries it makes in a day by adding drivers and vehicles, but if there’s only one sorting warehouse, the whole company (in Bitcoins case — Network) is limited to how many packages can be sorted in the warehouse daily.&lt;/p&gt;
+
+&lt;p&gt;This same issue is what plagues Bitcoin. It manages to solve the settlement issue we have with banks, where money can take from days to weeks to settle internationally - Bitcoin can do it in ten minutes. So if you were buying or selling something of high value, Bitcoin makes it far faster for you to settle the amount, but if you wanted to buy a chocolate bar,&lt;/p&gt;
+
+&lt;p&gt;Communication has changed drastically over the past 150 years and the first major win for communication was the invention of the telegram. The telegram made it possible for people to communicate in a fraction of the time it might take to deliver something by messenger or post.&lt;/p&gt;
+
+&lt;p&gt;To send a telegram, you would have to visit the local post office, fill in a form, and pay for the message based on how many letters you used in the message. The message would be sent to the nearest post office to where the recipient is, and then a postman would deliver the message to the recipient.&lt;/p&gt;
+
+&lt;p&gt;Nowadays, we no longer require all of these touchpoints to deliver a message, we can instantly communicate via instant messaging, email, or even by posting on social media.&lt;/p&gt;
+
+&lt;p&gt;The fact that we are able to communicate with each other and with systems instantly is an interesting concept when we apply it to money. While settling large amounts of money internationally can take a long time, sending funds via Venmo or the Cash App is instant, and more importantly, instantly spendable.&lt;/p&gt;
+
+&lt;h2 id=&quot;is-bitcoin-useful&quot;&gt;Is Bitcoin useful?&lt;/h2&gt;
+
+&lt;p&gt;Just like a bank wire transfer takes some time to settle a payment, so does Bitcoin. While a bank could take a few days to settle a payment, Bitcoin can take anything from 10 minutes to a day. The difference in settlement time is dependent on two things; How busy the network is, and how much you were willing to pay to settle the payment (known as a miners fee).&lt;/p&gt;
+
+&lt;p&gt;While ten minutes looks good compared to days, it would be really impractical to buy some chewing gum from your local convenience store and wait ten minutes (or longer if one of the two factors mentioned above are less than ideal) for your transaction to confirm so that you can leave the shop. So when we compare Bitcoin to payment methods like Venmo, or even a Visa card, it falls short of being remarkable.&lt;/p&gt;
+
+&lt;p&gt;Ok, so Bitcoin sucks at making small payments, it’s far more efficient than the current banking system in terms of settling large, international payments. You could attempt to send a million dollars from your bank account to a supplier in Taiwan, and that would take days to settle. It may also trigger international money exchange regulations within your country which may further delay your purchase.&lt;/p&gt;
+
+&lt;p&gt;With Bitcoin, you could do this in an hour, without anyone being able to delay, postpone or stop the transaction. Besides the fact that this is a massive win for individual liberty and freedom to transact, it also massively reduces the time required to make this transfer to someone. Bitcoin does what banks do in 5 days in ten minutes, but that still doesn’t make the currency useful on a massive scale.&lt;/p&gt;
+
+&lt;h2 id=&quot;bitcoin--evolved&quot;&gt;Bitcoin — evolved&lt;/h2&gt;
+
+&lt;p&gt;Think about how you transact with money for a moment. You don’t make bank transfers to pay for everything you buy. Sometimes you use your credit card. The credit card was invented in the 50’s — and yet its still the best solution we have for making payments?&lt;/p&gt;
+
+&lt;p&gt;Credit cards are built on top of the banking infrastructure to make spending money easier and more convenient.&lt;/p&gt;
+
+&lt;p&gt;Bitcoin was built to intentionally be as slow as it is (even though it’s still faster than banks) for security and network efficiency. This was intentional design and right from the start the creator(s) of Bitcoin started working on a layer 2 solution (think a debit card linked to your bank account) for Bitcoin.&lt;/p&gt;
+
+&lt;p&gt;Years after Satoshi disappeared from the public eye, the Lighting network was developed, which allows anyone to create their own payment channels to support a network built on top of the Bitcoin network.&lt;/p&gt;
+
+&lt;p&gt;The Lightning network is a way for you to instantly send funds to someone to pay for smaller items - like the gum you wanted to buy earlier.&lt;/p&gt;
+
+&lt;p&gt;The lightning network is the next step to scale Bitcoin and even though all the transactions are, on a technical level, not on the Bitcoin blockchain, the money you send and receive is actual Bitcoin which you can spend on the Lightning network or on the Bitcoin network as normal.&lt;/p&gt;
+
+&lt;p&gt;Transactions on the lightning Network are near-instant, costs very little, and scales the cryptocurrency from one that is great at cross border payments, or high-value payments to a currency that encompasses the best of security, convenience and fungibility.&lt;/p&gt;
+
+&lt;p&gt;Below is a clip in realtime of a Lightning network transaction where I sent USD $0.08 to a colleague which cost me USD $0.000024 to send.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/The-Nakamoto/thenakamoto.com/blob/gh-pages/assets/posts/LightningI-1.gif?raw=true&quot; alt=&quot;Lightning GIF&quot; title=&quot;Lightning GIF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is an impressive move in the cryptocurrency space as most cryptocurrencies opt for shorter confirmation times, which in turn affects security, however with this advancement for Bitcoin, it puts the currency firmly in the lead when it comes to usability and adoption.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Nov 2019 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/What-are-UTXOs-copy/</link>
+        <guid isPermaLink="true">http://localhost:4000/What-are-UTXOs-copy/</guid>
         
         <category>Bitcoin</category>
         
