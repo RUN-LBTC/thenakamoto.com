@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The Nakamoto</title>
-    <description></description>
-    <link>thenakamoto.com/</link>
-    <atom:link href="thenakamoto.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Sep 2020 11:28:32 +0200</pubDate>
-    <lastBuildDate>Wed, 16 Sep 2020 11:28:32 +0200</lastBuildDate>
+    <description>An educational portal for sound money and technology.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 16 Sep 2020 11:48:09 +0200</pubDate>
+    <lastBuildDate>Wed, 16 Sep 2020 11:48:09 +0200</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -45,8 +45,8 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
 &lt;p&gt;&lt;em&gt;This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Sep 2020 00:00:00 +0200</pubDate>
-        <link>thenakamoto.com/Scaling-money-I/</link>
-        <guid isPermaLink="true">thenakamoto.com/Scaling-money-I/</guid>
+        <link>http://localhost:4000/Scaling-money-I/</link>
+        <guid isPermaLink="true">http://localhost:4000/Scaling-money-I/</guid>
         
         <category>Bitcoin</category>
         
@@ -86,8 +86,8 @@ In this scenario salt becomes incredibly marketable because everyone is confiden
 &lt;p&gt;Tiaan&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Sep 2020 00:00:00 +0200</pubDate>
-        <link>thenakamoto.com/welcome/</link>
-        <guid isPermaLink="true">thenakamoto.com/welcome/</guid>
+        <link>http://localhost:4000/welcome/</link>
+        <guid isPermaLink="true">http://localhost:4000/welcome/</guid>
         
         <category>Bitcoin</category>
         
@@ -167,8 +167,8 @@ This approach is not perfect though, there is a non-zero chance that one of the 
 &lt;p&gt;&lt;em&gt;This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 May 2020 00:00:00 +0200</pubDate>
-        <link>thenakamoto.com/Sharding-II/</link>
-        <guid isPermaLink="true">thenakamoto.com/Sharding-II/</guid>
+        <link>http://localhost:4000/Sharding-II/</link>
+        <guid isPermaLink="true">http://localhost:4000/Sharding-II/</guid>
         
         <category>Bitcoin</category>
         
@@ -257,8 +257,8 @@ This approach is not perfect though, there is a non-zero chance that one of the 
 &lt;p&gt;&lt;em&gt;This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 May 2020 00:00:00 +0200</pubDate>
-        <link>thenakamoto.com/Sharding-I/</link>
-        <guid isPermaLink="true">thenakamoto.com/Sharding-I/</guid>
+        <link>http://localhost:4000/Sharding-I/</link>
+        <guid isPermaLink="true">http://localhost:4000/Sharding-I/</guid>
         
         <category>Ethereum</category>
         
@@ -338,8 +338,8 @@ This approach is not perfect though, there is a non-zero chance that one of the 
 &lt;p&gt;&lt;em&gt;This post is intended for informational purposes only. The views expressed in this post are not, and should not be construed as investment advice or recommendations. This article is not an offer, nor the solicitation of an offer, to buy or sell any of the assets or securities mentioned herein. All opinions in this post are my own.&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 14 Feb 2020 00:00:00 +0200</pubDate>
-        <link>thenakamoto.com/What-are-UTXOs/</link>
-        <guid isPermaLink="true">thenakamoto.com/What-are-UTXOs/</guid>
+        <link>http://localhost:4000/What-are-UTXOs/</link>
+        <guid isPermaLink="true">http://localhost:4000/What-are-UTXOs/</guid>
         
         <category>Bitcoin</category>
         
