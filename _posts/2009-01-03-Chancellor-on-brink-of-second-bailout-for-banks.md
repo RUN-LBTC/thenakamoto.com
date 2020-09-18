@@ -6,7 +6,7 @@ categories: [Bitcoin, Cryptocurrency, Money, Fractional Reserve Banking, Fiat]
 tags: [Bitcoin, Cryptocurrency, Money, Fractional Reserve Banking, Fiat]
 image: assets/images/03012009.png
 description: "The famous Bitcoin newpaper quote"
-featured: true
+featured: false
 hidden: false
 rating: 
 ---

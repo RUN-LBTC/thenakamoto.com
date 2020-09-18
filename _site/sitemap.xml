@@ -5,7 +5,7 @@
 <lastmod>2009-01-03T00:00:00+02:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/What-are-UTXOs-copy/</loc>
+<loc>http://localhost:4000/Lightning-network-scaling-bitcoin/</loc>
 <lastmod>2019-11-21T00:00:00+02:00</lastmod>
 </url>
 <url>
@@ -23,6 +23,10 @@
 <url>
 <loc>http://localhost:4000/Scaling-money-I/</loc>
 <lastmod>2020-09-15T00:00:00+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/PoW-vs-PoS/</loc>
+<lastmod>2020-09-17T00:00:00+02:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about</loc>
@@ -62,5 +66,17 @@
 </url>
 <url>
 <loc>http://localhost:4000/category/ethereum/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/staking/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/proof-of-work/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/proof-of-stake/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
